@@ -1,1 +1,2 @@
-"# xmind2xlsx" 
+# xmind2xlsx
+Flatten Xmind file into xlsx sheet

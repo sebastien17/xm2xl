@@ -1,0 +1,22 @@
+[project]
+name = "xmind2xlsx"
+version = "0.1"
+authors = [
+  { name="Sébastien LAUTIER", email="sebastien.lautier@gmail.com" },
+]
+description = "Flatten Xmind file into xlsx sheet"
+readme = "README.md"
+requires-python = ">=3.9.16"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/sebastien17/xmind2xlsx"
+"Bug Tracker" = "https://github.com/sebastien17/xmind2xlsx/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
