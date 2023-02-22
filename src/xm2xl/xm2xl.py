@@ -59,7 +59,7 @@ def flattenxmind(_dict) :
     
     return _list
  
-def xmindlist2excelformat(_xmindlist):
+def xm2xlformat(_xmindlist):
     _elements = []
     _max_parent = 0
     for line in _xmindlist:
@@ -76,7 +76,7 @@ def xmindlist2excelformat(_xmindlist):
     _header = ['title','note', 'label', 'comment', 'markers', 'hierachy'] + ["level " + str(i) for i in range(_max_parent+1)]
     return (_header, _elements)
 
-def xmind2xlsx(xmindfile, sheet='', outputfile =''):
+def xm2xl(xmindfile, sheet='', outputfile =''):
     """ 
     Write Xmind data into a xlsx file formated as a table
     
@@ -99,7 +99,7 @@ def xmind2xlsx(xmindfile, sheet='', outputfile =''):
     _flat_xmind = flattenxmind(_xmind_data)
 
     #Format python list in excel table (business undestanding)
-    _xls_data = xmindlist2excelformat(_flat_xmind)
+    _xls_data = xm2xlformat(_flat_xmind)
 
     #Load into a Pandas Dataframe and write it to excel file
     _data = pd.DataFrame(_xls_data[1], columns=_xls_data[0])
@@ -112,7 +112,7 @@ def xmind2xlsx(xmindfile, sheet='', outputfile =''):
 
 def __execute():
     import fire
-    fire.Fire(xmind2xlsx)
+    fire.Fire(xm2xl)
 
 if __name__ == "__main__":
     __execute()
