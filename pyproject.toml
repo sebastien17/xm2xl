@@ -1,6 +1,6 @@
 [project]
 name = "xm2xl"
-version = "0.2"
+version = "0.2.1"
 authors = [
   { name="Sébastien LAUTIER", email="sebastien.lautier@gmail.com" },
 ]
@@ -29,8 +29,8 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/sebastien17/xmind2xlsx"
-"Bug Tracker" = "https://github.com/sebastien17/xmind2xlsx/issues"
+"Homepage" = "https://github.com/sebastien17/xm2xl"
+"Bug Tracker" = "https://github.com/sebastien17/xm2xl/issues"
 
 [project.scripts]
 xm2xl = "xm2xl.xm2xl:__execute"
@@ -43,5 +43,5 @@ build-backend = "hatchling.build"
 include = [
 ]
 exclude = [
-  "requirement.txt"
+  "requirements.txt"
 ]

@@ -80,7 +80,7 @@ def xm2xl(xmindfile, sheet='', outputfile =''):
     """ 
     Write Xmind data into a xlsx file formated as a table
     
-     Usage : xmind2xls.exe <Xmind File> <flags>
+     Usage : xm2xl <Xmind File> <flags>
      
      Flags
         -s, --sheet=SHEET : Sheet to read data from
