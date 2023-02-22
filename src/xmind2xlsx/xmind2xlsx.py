@@ -110,8 +110,9 @@ def xmind2xlsx(xmindfile, sheet='', outputfile =''):
         _data.to_excel(outputfile)
         print('File output : ' + outputfile)
 
-if __name__ == "__main__":
+def __execute():
     import fire
     fire.Fire(xmind2xlsx)
 
-
+if __name__ == "__main__":
+    __execute()
