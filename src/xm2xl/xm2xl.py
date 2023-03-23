@@ -5,6 +5,9 @@ import xmind
 import pandas as pd
 import os
 
+# Parameters
+_DEFAULT_SUFFIX = '_export'
+
 def getSheetList(xbook):
     output={}
     for elt in xbook.getSheets():
@@ -101,7 +104,8 @@ def xm2xl(xmindfile, sheet='', outputfile =''):
     #Load into a Pandas Dataframe and write it to excel file
     _data = pd.DataFrame(_xls_data[1], columns=_xls_data[0])
     if(outputfile==''):
-        _xlsx_output = os.path.join(os.path.dirname(xmindfile), 'Export_' + os.path.basename(xmindfile))
+        #_xlsx_output = os.path.join(os.path.dirname(xmindfile), 'Export_' + os.path.basename(xmindfile))
+        _xlsx_output = os.path.splitext(os.path.realpath(xmindfile))[0] + _DEFAULT_SUFFIX + '.xlsx'
         _data.to_excel(_xlsx_output)
         print('File output : ' + _xlsx_output)
     else:
