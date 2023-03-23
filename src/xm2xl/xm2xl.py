@@ -3,9 +3,7 @@
 
 import xmind
 import pandas as pd
-
-#Parameters
-_DEFAULT_XLSX_OUTPUT_FILE = "Output.xlsx"
+import os
 
 def getSheetList(xbook):
     output={}
@@ -35,7 +33,6 @@ def flattenxmind(_dict) :
         
     #Iter Function
     def _sub(_subdict, _subparent):
-        # First iteration
         if('title' in _subdict.keys()):
             _list.append({
                         'title': _subdict['title'],
@@ -98,14 +95,15 @@ def xm2xl(xmindfile, sheet='', outputfile =''):
     #Flatten xmind data in python list
     _flat_xmind = flattenxmind(_xmind_data)
 
-    #Format python list in excel table (business undestanding)
+    #Format python list in excel table (business understanding)
     _xls_data = xm2xlformat(_flat_xmind)
 
     #Load into a Pandas Dataframe and write it to excel file
     _data = pd.DataFrame(_xls_data[1], columns=_xls_data[0])
     if(outputfile==''):
-        _data.to_excel(_DEFAULT_XLSX_OUTPUT_FILE)
-        print('File output : ' + _DEFAULT_XLSX_OUTPUT_FILE)
+        _xlsx_output = os.path.join(os.path.dirname(xmindfile), 'Export_' + os.path.basename(xmindfile))
+        _data.to_excel(_xlsx_output)
+        print('File output : ' + _xlsx_output)
     else:
         _data.to_excel(outputfile)
         print('File output : ' + outputfile)
